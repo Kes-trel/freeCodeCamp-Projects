@@ -1,0 +1,11 @@
+id="main"
+
+id="title"
+
+id="img-div"
+
+id="img-caption"
+
+id="tribute-info"
+
+id="tribute-link"
