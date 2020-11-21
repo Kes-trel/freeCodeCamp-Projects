@@ -12,18 +12,85 @@
 
     <p id="description">Sandwich with one filling is £2.50 plus £0.50 extra for each additional filling.. Choose wisely!</p>
 
-    <form action="" id="survey-form">
-        <label for="name">Name:<label><br>
-        <input type="text" name="name" id="name" placeholder="Enter your name" required><br>
+    <form id="survey-form">
+        <div>
+            <label for="name" id="name-label">Name:<label><br>
+            <input type="text" name="name" id="name" placeholder="Enter your name" required>
+        </div>
 
-        <label for="email">Email:</label><br>
-        <input type="email" name="email" id="email" placeholder="Enter valid email address" required><br>
+        <div>
+            <label for="email" id="email-label">Email:</label><br>
+            <input type="email" name="email" id="email" placeholder="Enter valid email address" required>
+        </div>
 
-        <label for="number">How many?</label><br>
-        <input type="number" id="number" placeholder="How many sandwiches" required><br>
+        <div>
+            <label for="number" id="number-label">How many sandwiches?</label><br>
+            <input type="number" id="number" placeholder="Enter number of sandwiches" min="1" max="5" required>
+        </div>
+
+        <div>
+            <label for="dropdown" id="dropdown-label">Choose your teacake:<br>(also known as: Cob, Barmcake, Barm, Bap, Bun, Stotty, Roll, Bin Lid)</label><br>
+            <select name="dropdown" id="dropdown" required>
+                <option value="white">White</option>
+                <option value="brown">Brown</option>
+                <option value="wholegrain">Wholegrain</option>
+                <option value="gluten-free">Gluten Free</option>
+            </select>
+        </div>
+
+        <div>
+            <p>Choose your souce:</p>
+            <input type="radio" name="souce" class="souce-radio" value="ketchup">
+                <label for="ketchup">Ketchup</label><br>
+            <input type="radio" name="souce" class="souce-radio" value="brown-sauce">
+                <label for="brown-sauce">Brown Sauce</label><br>
+            <input type="radio" name="souce" class="souce-radio" value="mayonnaise">
+                <label for="mayonnaise">Mayonnaise</label><br>
+            <input type="radio" name="souce" class="souce-radio" value="none">
+                <label for="none">None</label>
+        </div>
+
+        <div>
+            <p>Choose your fillings:</p>
+            <input type="checkbox" name="filling" class="fill-checkbox" value="bacon">
+                <label for="bacon">Bacon</label><br>
+            <input type="checkbox" name="filling" class="fill-checkbox" value="crispy-bacon">
+                <label for="crispy-bacon">Crispy Bacon</label><br>
+            <input type="checkbox" name="filling" class="fill-checkbox" value="sausage">
+                <label for="sausage">Sausage</label><br>
+            <input type="checkbox" name="filling" class="fill-checkbox" value="egg">
+                <label for="egg">Eggs</label><br>
+            <input type="checkbox" name="filling" class="fill-checkbox" value="spam">
+                <label for="spam">Spam</label><br>       
+            <input type="checkbox" name="filling" class="fill-checkbox" value="mushrooms">
+                <label for="mushrooms">Mushrooms</label><br>       
+            <input type="checkbox" name="filling" class="fill-checkbox" value="tomatoes">
+                <label for="tomatoes">Eggs</label><br>       
+            <input type="checkbox" name="filling" class="fill-checkbox" value="hash-brown">
+                <label for="hash-brown">Hash Brown</label><br>       
+            <input type="checkbox" name="filling" class="fill-checkbox" value="beans">
+                <label for="beans">Beans</label><br>       
+        </div>
+
+        <div>
+            <p>Any other dietary requirements?</p>
+            <textarea name="comments" id="textarea" cols="30" rows="10" placeholder="Enter your comments here.."></textarea>
+        </div>
+
+        <div>
+            <button type="submit" id="submit">Place your order!</button>
+        </div>
         
     </form>
 
     
 </body>
 </html>
+
+
+<!-- User Story #6: If I enter an email that is not formatted correctly, I will see an HTML5 validation error.
+
+User Story #8: If I enter non-numbers in the number input, I will see an HTML5 validation error.
+
+
+
