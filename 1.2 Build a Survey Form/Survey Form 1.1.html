@@ -8,9 +8,9 @@
 </head>
 <body>
 
-    <h1 id="title">Friday Butty Run! </h1>
+    <h1 id="title">Friday Butty Run! &#129316</h1>
 
-    <p id="description">Sandwich with one filling is £2.50 plus £0.50 extra for each additional filling.. Choose wisely!</p>
+    <p id="description">Select your sandwich.. <strong>Choose wisely!</strong></p>
 
     <form id="survey-form">
         <div>
@@ -29,7 +29,7 @@
         </div>
 
         <div>
-            <label for="dropdown" id="dropdown-label">Choose your teacake:<br>(also known as: Cob, Barmcake, Barm, Bap, Bun, Stotty, Roll, Bin Lid)</label><br>
+            <label for="dropdown" id="dropdown-label">Choose your teacake:<br>(Cob, Barmcake, Barm, Bap, Bun, Stotty, Roll, Bin Lid)</label><br>
             <select name="dropdown" id="dropdown" required>
                 <option value="white">White</option>
                 <option value="brown">Brown</option>
@@ -39,7 +39,7 @@
         </div>
 
         <div>
-            <p>Choose your souce:</p>
+            <label for="souce" id="souce-label">Choose your souce:</label><br>
             <input type="radio" name="souce" class="souce-radio" value="ketchup">
                 <label for="ketchup">Ketchup</label><br>
             <input type="radio" name="souce" class="souce-radio" value="brown-sauce">
@@ -47,11 +47,11 @@
             <input type="radio" name="souce" class="souce-radio" value="mayonnaise">
                 <label for="mayonnaise">Mayonnaise</label><br>
             <input type="radio" name="souce" class="souce-radio" value="none">
-                <label for="none">None</label>
+                <label for="none">No Souce</label>
         </div>
 
         <div>
-            <p>Choose your fillings:</p>
+            <label for="filling" id="filling-label">Choose your fillings:</label><br>
             <input type="checkbox" name="filling" class="fill-checkbox" value="bacon">
                 <label for="bacon">Bacon</label><br>
             <input type="checkbox" name="filling" class="fill-checkbox" value="crispy-bacon">
@@ -73,8 +73,8 @@
         </div>
 
         <div>
-            <p>Any other dietary requirements?</p>
-            <textarea name="comments" id="textarea" cols="30" rows="10" placeholder="Enter your comments here.."></textarea>
+            <label for="comments" id="comments-label">Any other dietary requirements?</label><br>
+            <textarea name="comments" id="textarea" cols="2" rows="2" placeholder="Enter your comments here.."></textarea>
         </div>
 
         <div>
@@ -86,11 +86,3 @@
     
 </body>
 </html>
-
-
-<!-- User Story #6: If I enter an email that is not formatted correctly, I will see an HTML5 validation error.
-
-User Story #8: If I enter non-numbers in the number input, I will see an HTML5 validation error.
-
-
-
