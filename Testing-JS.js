@@ -1,22 +1,24 @@
-var names = ["Hole-in-one!", "Eagle", "Birdie", "Par", "Bogey", "Double Bogey", "Go Home!"];
-function golfScore(par, strokes) {
-  // Only change code below this line
-if (strokes = 1) {
-  return names[0];
-} else if (strokes <= par - 2) {
-  return names[1];
-} else if (strokes == par - 1) {
-  return names[2];
-} else if (strokes == par) {
-  return names[3];
-} else if (strokes == par + 1) {
-  return names[4];
-} else if (strokes == par + 2) {
-  return names[5];
-} else {
-  return names[6];
-}
-
-}
-
-console.log(golfScore(4,2));
+function switchOfStuff(val) {
+    var answer = "";
+    // Only change code below this line
+      switch(val){
+          case "a":
+              answer = "apple";
+              break;
+          case "b":
+              answer = "bird";
+              break;
+          case "c":
+              answer = "cat";
+              break;
+          default:
+              answer = "stuff";
+              break;
+      }
+    
+    // Only change code above this line
+    return answer;
+  }
+  
+  console.log(switchOfStuff("a"));
+  
