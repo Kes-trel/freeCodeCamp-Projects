@@ -98,10 +98,22 @@ var collection = {
 
 // Only change code below this line
 function updateRecords(object, id, prop, value) {
+  if(prop !== "tracks" && value !== "" && object[id].hasOwnProperty(prop)==false) {
+    collection[id][prop] = value;
+  } else if (prop == "tracks" && object[id].hasOwnProperty(prop)==false) {
+    collection[id][prop] = [value];
+  } else if (prop == "tracks" && value !== "" ) {
+    collection[id][prop].push(value);
+  } else if (value == "") {
+    delete object[id][prop];
+  }
   return object;
 }
 
 console.log(updateRecords(collection, 5439, 'artist', 'ABBA'));
+console.log(updateRecords(collection, 2468, "tracks", "Free"));
+console.log(updateRecords(collection, 1245, "tracks", "Addicted to Love"));
+
 
 /*
 Your function must always return the entire object.
@@ -113,5 +125,6 @@ If prop is tracks but the album doesn't have a tracks property, create an empty 
 If prop is tracks and value isn't an empty string, add value to the end of the album's existing tracks array.
 
 If value is an empty string, delete the given prop property from the album.
+
 Note: A copy of the collection object is used for the tests.
 */
