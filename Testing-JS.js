@@ -98,21 +98,29 @@ var collection = {
 
 // Only change code below this line
 function updateRecords(object, id, prop, value) {
-  if(prop !== "tracks" && value !== "" && object[id].hasOwnProperty(prop)==false) {
-    collection[id][prop] = value;
-  } else if (prop == "tracks" && object[id].hasOwnProperty(prop)==false) {
-    collection[id][prop] = [value];
-  } else if (prop == "tracks" && value !== "" ) {
-    collection[id][prop].push(value);
-  } else if (value == "") {
+  if(prop !== "tracks" && value !== "") {
+    object[id][prop] = value;
+  } else if (prop === "tracks" && object[id].hasOwnProperty(prop)==false) {
+    object[id][prop] = [value];
+  } else if (prop === "tracks" && value !== "" ) {
+    object[id][prop].push(value);
+  } else if (value === "") {
     delete object[id][prop];
   }
   return object;
 }
 
-console.log(updateRecords(collection, 5439, 'artist', 'ABBA'));
-console.log(updateRecords(collection, 2468, "tracks", "Free"));
+console.log(updateRecords(collection, 5439, "artist", "ABBA"));
+console.log(updateRecords(collection, 5439, "tracks", "Take a Chance on Me"));
+console.log(updateRecords(collection, 2548, "artist", ""));
 console.log(updateRecords(collection, 1245, "tracks", "Addicted to Love"));
+console.log(updateRecords(collection, 2468, "tracks", "Free"));
+console.log(updateRecords(collection, 2548, "tracks", ""));
+console.log(updateRecords(collection, 1245, "albumTitle", "Riptide"))
+
+
+
+
 
 
 /*
