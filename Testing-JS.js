@@ -132,4 +132,20 @@ If value is an empty string, delete the given prop property from the album.
 Note: A copy of the collection object is used for the tests.
 */
 
-
+function multiplyAll(arr) {
+    var product = 1;
+    // Only change code below this line
+  
+  for (var a = 0; a < arr.length; a++) {
+    for (var b = 0; b < arr[a].length; b++) {
+      for (var c = 0; c < arr[b].length; c++) {
+        product *= arr[a] * arr[b] * arr[c];
+      }
+    }
+  }
+    // Only change code above this line
+    return product;
+  }
+  
+  multiplyAll([[1,2],[3,4],[5,6,7]]);
+  
