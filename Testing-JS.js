@@ -138,14 +138,14 @@ function multiplyAll(arr) {
   
   for (var a = 0; a < arr.length; a++) {
     for (var b = 0; b < arr[a].length; b++) {
-      for (var c = 0; c < arr[b].length; c++) {
-        product *= arr[a] * arr[b] * arr[c];
+       product *= arr[a][b];
       }
     }
-  }
+  
     // Only change code above this line
     return product;
-  }
+}
   
-  multiplyAll([[1,2],[3,4],[5,6,7]]);
+  console.log(multiplyAll([[1,2],[3,4],[5,6,7]]));
+
   
