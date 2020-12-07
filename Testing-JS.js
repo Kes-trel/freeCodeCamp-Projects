@@ -132,20 +132,68 @@ If value is an empty string, delete the given prop property from the album.
 Note: A copy of the collection object is used for the tests.
 */
 
-function multiplyAll(arr) {
-    var product = 1;
-    // Only change code below this line
+// function multiplyAll(arr) {
+//     var product = 1;
+//     // Only change code below this line
   
-  for (var a = 0; a < arr.length; a++) {
-    for (var b = 0; b < arr[a].length; b++) {
-       product *= arr[a][b];
-      }
-    }
+//   for (var a = 0; a < arr.length; a++) {
+//     for (var b = 0; b < arr[a].length; b++) {
+//        product *= arr[a][b];
+//       }
+//     }
   
-    // Only change code above this line
-    return product;
-}
+//     // Only change code above this line
+//     return product;
+// }
   
-  console.log(multiplyAll([[1,2],[3,4],[5,6,7]]));
+//   console.log(multiplyAll([[1,2],[3,4],[5,6,7]]));
 
   
+// Setup
+var contacts = [
+  {
+      "firstName": "Akira",
+      "lastName": "Laine",
+      "number": "0543236543",
+      "likes": ["Pizza", "Coding", "Brownie Points"]
+  },
+  {
+      "firstName": "Harry",
+      "lastName": "Potter",
+      "number": "0994372684",
+      "likes": ["Hogwarts", "Magic", "Hagrid"]
+  },
+  {
+      "firstName": "Sherlock",
+      "lastName": "Holmes",
+      "number": "0487345643",
+      "likes": ["Intriguing Cases", "Violin"]
+  },
+  {
+      "firstName": "Kristian",
+      "lastName": "Vos",
+      "number": "unknown",
+      "likes": ["JavaScript", "Gaming", "Foxes"]
+  }
+];
+
+
+function lookUpProfile(name, prop){
+// Only change code below this line
+for (var listIndex = 0; listIndex < contacts.length; listIndex++) {
+  if (name === contacts[listIndex].firstName) {
+    if (contacts[listIndex].hasOwnProperty(prop)===true) {
+      return contacts[listIndex][prop];
+  } else {
+      return "No such property";
+    }
+  }
+}
+return "No such contact";
+// Only change code above this line
+}
+
+console.log(lookUpProfile("Harry", "likes"));
+
+
+
