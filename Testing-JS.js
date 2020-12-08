@@ -196,12 +196,14 @@ Note: A copy of the collection object is used for the tests.
 // console.log(lookUpProfile("Harry", "likes"));
 
 
-function randomFraction() {
+// function randomFraction() {
 
-  // Only change code below this line
+//   // Only change code below this line
 
-  return Math.random(0);
+//   return Math.random(0);
 
-  // Only change code above this line
-}
- console.log(randomFraction())
+//   // Only change code above this line
+// }
+//  console.log(randomFraction())
+
+
