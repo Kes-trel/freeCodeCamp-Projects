@@ -219,9 +219,21 @@ Note: A copy of the collection object is used for the tests.
 // console.log(randomRange(10, 20))
 
 
+
+// function convertToInteger(str) {
+//   return parseInt(str) //The parseInt() function parses a string and returns an integer. If the first character in the string can't be converted into a number, then it returns NaN
+// }
+
+// console.log(convertToInteger("56"));
+
+
+
+
 function convertToInteger(str) {
-  return parseInt(str)
+return parseInt(str, 2); //The parseInt() function parses a string and returns an integer. It takes a second argument for the radix, which specifies the base of the number in the string. The radix can be an integer between 2 and 36.
 }
 
-console.log(convertToInteger("56"));
+console.log(convertToInteger("10011"));
+
+
 
