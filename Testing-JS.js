@@ -242,8 +242,10 @@ function countdown(n){
     if (n < 1) {
         return [];
     } else {
-        
+        var loopCount = countdown(n-1);
+        loopCount.unshift(n);
+        return loopCount;
     }
   }
   // Only change code above this line
- console.log(countdown(n));
+ console.log(countdown(5));
