@@ -238,14 +238,31 @@ Note: A copy of the collection object is used for the tests.
 
 //Basic JavaScript: Use Recursion to Create a Countdown
 // Only change code below this line
-function countdown(n){
-    if (n < 1) {
-        return [];
+// function countdown(n){
+//     if (n < 1) {
+//         return [];
+//     } else {
+//         var loopCount = countdown(n-1);
+//         loopCount.unshift(n);
+//         return loopCount;
+//     }
+//   }
+//   // Only change code above this line
+//  console.log(countdown(5));
+
+
+
+/*
+We have defined a function named rangeOfNumbers with two parameters. The function should return an array of integers which begins with a number represented by the startNum parameter and ends with a number represented by the endNum parameter. The starting number will always be less than or equal to the ending number. Your function must use recursion by calling itself and not use loops of any kind. It should also work for cases where both startNum and endNum are the same.
+*/
+function rangeOfNumbers(startNum, endNum) {
+    if (endNum < startNum) {
+        return []
     } else {
-        var loopCount = countdown(n-1);
-        loopCount.unshift(n);
-        return loopCount;
+        var recursiveLoop = rangeOfNumbers(startNum, endNum - 1);
+        recursiveLoop.push(endNum);
+        return recursiveLoop;
     }
-  }
-  // Only change code above this line
- console.log(countdown(5));
+  };
+
+console.log(rangeOfNumbers(1, 5));
