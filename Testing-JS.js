@@ -239,7 +239,11 @@ Note: A copy of the collection object is used for the tests.
 //Basic JavaScript: Use Recursion to Create a Countdown
 // Only change code below this line
 function countdown(n){
-    return;
+    if (n < 1) {
+        return [];
+    } else {
+        
+    }
   }
   // Only change code above this line
-  
+ console.log(countdown(n));
