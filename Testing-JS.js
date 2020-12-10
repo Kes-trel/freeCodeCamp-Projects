@@ -267,3 +267,7 @@ We have defined a function named rangeOfNumbers with two parameters. The functio
 
 // console.log(rangeOfNumbers(1, 5));
 
+var magic = function() {
+    return new Date();
+  };
+console.log(magic());  
