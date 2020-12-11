@@ -267,7 +267,10 @@ We have defined a function named rangeOfNumbers with two parameters. The functio
 
 // console.log(rangeOfNumbers(1, 5));
 
-var magic = function() {
-    return new Date();
-  };
-console.log(magic());  
+//Use Arrow Functions to Write Concise Anonymous FunctionsPassed
+// var magic = function() {
+//     return new Date();
+//   };
+
+const magic = () => new Date();
+console.log(magic());
