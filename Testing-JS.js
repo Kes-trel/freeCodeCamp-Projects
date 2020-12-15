@@ -292,17 +292,48 @@ In order to help us create more flexible functions, ES6 introduces the rest para
 
 
 
-const HIGH_TEMPERATURES = {
-    yesterday: 75,
-    today: 77,
-    tomorrow: 80
-  };
+// const HIGH_TEMPERATURES = {
+//     yesterday: 75,
+//     today: 77,
+//     tomorrow: 80
+//   };
   
-  // Only change code below this line
+//   // Only change code below this line
   
-  const {today} = HIGH_TEMPERATURES;
-  const tomorrow = HIGH_TEMPERATURES.tomorrow;
+//   const {today} = HIGH_TEMPERATURES;
+//   const tomorrow = HIGH_TEMPERATURES.tomorrow;
   
-  // Only change code above this line
+//   // Only change code above this line
 
-console.log(today)
+// console.log(today)
+
+
+// const source = [1,2,3,4,5,6,7,8,9,10];
+// function removeFirstTwo(list) {
+//   // Only change code below this line
+//   const [a,b,...arr] = list; // Change this line
+//   // Only change code above this line
+//   return arr;
+// }
+// const arr = removeFirstTwo(source);
+
+// console.log(arr)
+
+
+
+
+const result = {
+    success: ["max-length", "no-amd", "prefer-arrow-functions"],
+    failure: ["no-var", "var-on-top", "linebreak"],
+    skipped: ["no-extra-semi", "no-dup-keys"]
+  };
+  function makeList(arr) {
+    // Only change code below this line
+    const failureItems = [];
+    // Only change code above this line
+  
+    return failureItems;
+  }
+  
+  const failuresList = makeList(result.failure);
+  
