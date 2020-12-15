@@ -330,10 +330,16 @@ const result = {
   function makeList(arr) {
     // Only change code below this line
     const failureItems = [];
+        for (let index=0; index<arr.length; index++){
+            failureItems.push(`<li class="text-warning">${arr[index]}</li>`);
+        }
+
     // Only change code above this line
   
     return failureItems;
   }
   
   const failuresList = makeList(result.failure);
+
+  console.log(failuresList)
   
