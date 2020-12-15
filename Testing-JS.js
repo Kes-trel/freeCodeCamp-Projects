@@ -285,7 +285,24 @@ We have defined a function named rangeOfNumbers with two parameters. The functio
 ES6: Use the Rest Parameter with Function Parameters
 In order to help us create more flexible functions, ES6 introduces the rest parameter for function parameters. With the rest parameter, you can create functions that take a variable number of arguments. These arguments are stored in an array that can be accessed later from inside the function.
 */
-const sum = (...manyArgs) => manyArgs.reduce((a,b) => a + b, 0);
+// const sum = (...manyArgs) => manyArgs.reduce((a,b) => a + b, 0);
 
-console.log(sum(1,2,3,4))
+// console.log(sum(1,2,3,4))
 
+
+
+
+const HIGH_TEMPERATURES = {
+    yesterday: 75,
+    today: 77,
+    tomorrow: 80
+  };
+  
+  // Only change code below this line
+  
+  const {today} = HIGH_TEMPERATURES;
+  const tomorrow = HIGH_TEMPERATURES.tomorrow;
+  
+  // Only change code above this line
+
+console.log(today)
