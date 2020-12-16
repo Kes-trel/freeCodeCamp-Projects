@@ -322,24 +322,37 @@ In order to help us create more flexible functions, ES6 introduces the rest para
 
 
 
-const result = {
-    success: ["max-length", "no-amd", "prefer-arrow-functions"],
-    failure: ["no-var", "var-on-top", "linebreak"],
-    skipped: ["no-extra-semi", "no-dup-keys"]
-  };
-  function makeList(arr) {
-    // Only change code below this line
-    const failureItems = [];
-        for (let index=0; index<arr.length; index++){
-            failureItems.push(`<li class="text-warning">${arr[index]}</li>`);
-        }
+// const result = {
+//     success: ["max-length", "no-amd", "prefer-arrow-functions"],
+//     failure: ["no-var", "var-on-top", "linebreak"],
+//     skipped: ["no-extra-semi", "no-dup-keys"]
+//   };
+//   function makeList(arr) {
+//     // Only change code below this line
+//     const failureItems = [];
+//         for (let index=0; index<arr.length; index++){
+//             failureItems.push(`<li class="text-warning">${arr[index]}</li>`);
+//         }
 
-    // Only change code above this line
+//     // Only change code above this line
   
-    return failureItems;
+//     return failureItems;
+//   }
+  
+//   const failuresList = makeList(result.failure);
+
+//   console.log(failuresList) 
+  
+
+
+
+// Only change code below this line
+class Vegetable {
+  constructor (name) {
+    this.name = name;
   }
-  
-  const failuresList = makeList(result.failure);
+}
+// Only change code above this line
 
-  console.log(failuresList) 
-  
+const carrot = new Vegetable('carrot');
+console.log(carrot.name); // Should display 'carrot'
