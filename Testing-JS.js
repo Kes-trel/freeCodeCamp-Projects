@@ -346,13 +346,36 @@ In order to help us create more flexible functions, ES6 introduces the rest para
 
 
 
+// // Only change code below this line
+// class Vegetable {
+//   constructor (name) {
+//     this.name = name;
+//   }
+// }
+// // Only change code above this line
+
+// const carrot = new Vegetable('carrot');
+// console.log(carrot.name); // Should display 'carrot'
+
+
+
 // Only change code below this line
-class Vegetable {
-  constructor (name) {
-    this.name = name;
-  }
+class Thermostat {
+    constructor (tempF) {
+      this.tempF = tempF;
+    }
+    get temperature() {
+      return (5 / 9) * (this.tempF - 32);
+    }
+    set temperature(tempC) {
+       this.tempF = (tempC * 9.0) / 5 + 32;
+    }
 }
 // Only change code above this line
 
-const carrot = new Vegetable('carrot');
-console.log(carrot.name); // Should display 'carrot'
+const thermos = new Thermostat(76); // Setting in Fahrenheit scale
+let temp = thermos.temperature; // 24.44 in Celsius
+thermos.temperature = 30;
+temp = thermos.temperature; // 26 in Celsius
+
+console.log(thermos._tempC)
