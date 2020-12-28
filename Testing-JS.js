@@ -379,3 +379,6 @@ In order to help us create more flexible functions, ES6 introduces the rest para
 // temp = thermos.temperature; // 26 in Celsius
 
 // console.log(temp)
+
+
+
