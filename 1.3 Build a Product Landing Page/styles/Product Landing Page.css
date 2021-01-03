@@ -1,10 +1,16 @@
 header {
     position: fixed;
     top: 0;
-    min-height: 75px;
     padding: 0px 20px;
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
     background-color: #eee;
   }
+
+#header-img {
+    width: 20%;
+    clip-path: circle(16.8% at 51% 33%);
+    padding: 0px 0px;
+    
+}
