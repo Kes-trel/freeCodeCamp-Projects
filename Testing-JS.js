@@ -384,13 +384,12 @@ let arr = [[4, 5, 1, 3], [13, 27, 18, 26], [32, 35, 37, 39], [1000, 1001, 857, 1
 let finalResult = [];
 for (let a = 0; a < arr.length; a++) {
     let largestNum = arr[a][0];
-    for (let b = 1; 1 < arr[a].length; b++) {
+    for (let b = 1; b < arr[a].length; b++) {
         if (arr[a][b] > largestNum) {
             largestNum = arr[a][b];
         }
     }
-    finalResult[a] = largestNum
+    finalResult[a] = largestNum;
 }
 
-console.log(newArr)
-console.log(newArr[2])
+console.log(finalResult)
