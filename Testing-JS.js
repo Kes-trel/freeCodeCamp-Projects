@@ -395,16 +395,21 @@ In order to help us create more flexible functions, ES6 introduces the rest para
 // console.log(finalResult)
 
 
-function repeatStringNumTimes(str, num) {
-    if (num < 1) {
-        return "";
-    } else if (num === 1) {
-        return str;
-    } else {
-        return str + repeatStringNumTimes(str, num - 1);
-    }
-}
+// function repeatStringNumTimes(str, num) {
+//     if (num < 1) {
+//         return "";
+//     } else if (num === 1) {
+//         return str;
+//     } else {
+//         return str + repeatStringNumTimes(str, num - 1);
+//     }
+// }
   
-  console.log(repeatStringNumTimes("abc", 2));
+//   console.log(repeatStringNumTimes("abc", 2));
 
 
+  function truncateString(str, num) {
+    return str;
+  }
+  
+  truncateString("A-tisket a-tasket A green and yellow basket", 8);
