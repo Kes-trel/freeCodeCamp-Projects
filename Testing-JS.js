@@ -408,8 +408,32 @@ In order to help us create more flexible functions, ES6 introduces the rest para
 //   console.log(repeatStringNumTimes("abc", 2));
 
 
+/*Basic Algorithm Scripting: Truncate a String
+
+Truncate a string (first argument) if it is longer than the given maximum string length (second argument).
+Return the truncated string with a ... ending.
+*/
+
   function truncateString(str, num) {
-    return str;
+      if (str.length > num) {
+      let newStr = str.split("");
+      let trunkArr = [];
+      for ( let i = 0; i < num; i++) {
+        trunkArr.push(newStr[i]);
+      }
+      return trunkArr.join("")+"...";
+    } else {
+        return str
+    }
   }
   
-  truncateString("A-tisket a-tasket A green and yellow basket", 8);
+  console.log (truncateString("A-tisket a-tasket A green and yellow basket", 8));
+
+
+
+/* Basic Algorithm Scripting: Finders Keepers
+
+Create a function that looks through an array arr and returns the first element in it that passes a 'truth test'.
+This means that given an element x, the 'truth test' is passed if func(x) is true. If no element passes the test, return undefined.
+*/
+
