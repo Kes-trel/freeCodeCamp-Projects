@@ -459,18 +459,38 @@ Return the provided string with the first letter of each word capitalized. Make 
 For the purpose of this exercise, you should also capitalize connecting words like "the" and "of".
 */
 
-function titleCase(str) {
-    let lowStr = str.toLowerCase();
-    let newArr = lowStr.split(" ");
-    let upperArr = [];
-    let smallArr= [];
-    let concatArr = [];
-    for (let i = 0; i < newArr.length; i++) {
-        upperArr.push(newArr[i][0].toUpperCase());
-        smallArr.push(newArr[i].slice(1));
-        concatArr.push(upperArr[i]+smallArr[i])
-    }
-    return concatArr.join(" ")
-  }
+// function titleCase(str) {
+//     let lowStr = str.toLowerCase();
+//     let newArr = lowStr.split(" ");
+//     let upperArr = [];
+//     let smallArr= [];
+//     let concatArr = [];
+//     for (let i = 0; i < newArr.length; i++) {
+//         upperArr.push(newArr[i][0].toUpperCase());
+//         smallArr.push(newArr[i].slice(1));
+//         concatArr.push(upperArr[i]+smallArr[i])
+//     }
+//     return concatArr.join(" ")
+//   }
   
-  console.log(titleCase("HERE IS MY HANDLE HERE IS MY SPOUT"));
+//   console.log(titleCase("HERE IS MY HANDLE HERE IS MY SPOUT"));
+
+
+
+
+/*Basic Algorithm Scripting: Slice and Splice
+
+You are given two arrays and an index. Copy each element of the first array into the second array, in order.
+
+Begin inserting elements at index n of the second array. Return the resulting array. The input arrays should remain the same after the function runs.
+*/
+
+// function frankenSplice(arr1, arr2, n) {
+//     let arrTwo = arr2.slice();
+//     let endArr = arrTwo.splice(n);
+//     let beginArr = arrTwo.splice(-n);
+//     let newArr = beginArr.concat(arr1,endArr)
+//     return arr2
+// }
+  
+// console.log(frankenSplice([1, 2, 3], [4, 5, 6], 1));
