@@ -414,20 +414,20 @@ Truncate a string (first argument) if it is longer than the given maximum string
 Return the truncated string with a ... ending.
 */
 
-  function truncateString(str, num) {
-      if (str.length > num) {
-      let newStr = str.split("");
-      let trunkArr = [];
-      for ( let i = 0; i < num; i++) {
-        trunkArr.push(newStr[i]);
-      }
-      return trunkArr.join("")+"...";
-    } else {
-        return str
-    }
-  }
+//   function truncateString(str, num) {
+//       if (str.length > num) {
+//       let newStr = str.split("");
+//       let trunkArr = [];
+//       for ( let i = 0; i < num; i++) {
+//         trunkArr.push(newStr[i]);
+//       }
+//       return trunkArr.join("")+"...";
+//     } else {
+//         return str
+//     }
+//   }
   
-  console.log (truncateString("A-tisket a-tasket A green and yellow basket", 8));
+//   console.log (truncateString("A-tisket a-tasket A green and yellow basket", 8));
 
 
 
@@ -437,3 +437,40 @@ Create a function that looks through an array arr and returns the first element 
 This means that given an element x, the 'truth test' is passed if func(x) is true. If no element passes the test, return undefined.
 */
 
+// function findElement(arr, func) {
+// let num = 0;
+// for (var i = 0; i < arr.length; i++) {
+//     num = arr[i];
+//     if (func(num)) {
+//     return num;
+//     }
+// }
+//     return undefined;
+// }
+
+//   console.log(findElement([1, 3, 5, 8, 9, 10], function(num) { return num % 2 === 0; }));
+
+
+
+/* Basic Algorithm Scripting: Title Case a Sentence
+
+Return the provided string with the first letter of each word capitalized. Make sure the rest of the word is in lower case.
+
+For the purpose of this exercise, you should also capitalize connecting words like "the" and "of".
+*/
+
+function titleCase(str) {
+    let lowStr = str.toLowerCase();
+    let newArr = lowStr.split(" ");
+    let upperArr = [];
+    let smallArr= [];
+    let concatArr = [];
+    for (let i = 0; i < newArr.length; i++) {
+        upperArr.push(newArr[i][0].toUpperCase());
+        smallArr.push(newArr[i].slice(1));
+        concatArr.push(upperArr[i]+smallArr[i])
+    }
+    return concatArr.join(" ")
+  }
+  
+  console.log(titleCase("HERE IS MY HANDLE HERE IS MY SPOUT"));
