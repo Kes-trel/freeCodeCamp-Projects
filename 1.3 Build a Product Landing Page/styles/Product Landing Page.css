@@ -48,3 +48,20 @@ header {
   background-color: #4c4c4c;
   color: antiquewhite;
 }
+
+.container-main {
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.container-main > section {
+  width: 30vw;
+  margin: 10px;
+  text-align: center;
+  font-size: 20px;
+}
+
+.container-main img {
+  width: 30vw;
+  padding-top: 20px;
+}
