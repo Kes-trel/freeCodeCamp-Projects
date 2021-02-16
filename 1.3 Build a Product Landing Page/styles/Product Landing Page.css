@@ -7,6 +7,7 @@
 
 body {
   background-color: rgba(260,255,255,0.85);
+  text-align: center;
 }
 
 header {
@@ -15,11 +16,11 @@ header {
   top: 0;
   width: 100%;
   background-color: yellow;
+  z-index: 11;
 }
 
 .logo {
   float: left;
-  vertical-align: middle;
   line-height: 50px;
 }
 
@@ -49,6 +50,10 @@ header {
   color: antiquewhite;
 }
 
+.banner-area {
+  
+}
+
 .main-text {
   display: flex;
   flex-wrap: wrap;
@@ -73,4 +78,9 @@ header {
 
 .description {
   padding: 2vw;
+}
+
+.container-form {
+  display: block;
+  top: 200px;
 }
