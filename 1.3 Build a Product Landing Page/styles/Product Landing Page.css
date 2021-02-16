@@ -52,6 +52,7 @@ header {
 .container-main {
   display: flex;
   flex-wrap: nowrap;
+  flex-direction: row;
 }
 
 .container-main > section {
