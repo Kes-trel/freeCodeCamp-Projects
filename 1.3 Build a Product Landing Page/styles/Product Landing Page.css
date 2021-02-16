@@ -49,13 +49,12 @@ header {
   color: antiquewhite;
 }
 
-.container-main {
+.main-text {
   display: flex;
-  flex-wrap: wrap;
+
 }
 
-.container-main > section {
-  display: inline;
+.container-main {
   width: 30vw;
   margin: 10px;
   text-align: center;
@@ -67,4 +66,10 @@ header {
 .container-main img {
   width: 10vw;
   padding-top: 20px;
+  align-items: center;
+  margin: auto;
+}
+
+.description {
+  padding: 2vw;
 }
