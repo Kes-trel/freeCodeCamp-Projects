@@ -91,6 +91,10 @@ input {
   width: 28vw;
 }
 
+.image-container {
+  align-items: flex-end;
+}
+
 .container-main img {
   width: 400px;
   padding-top: 50px;
