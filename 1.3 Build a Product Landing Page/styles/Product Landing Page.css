@@ -89,23 +89,44 @@ input {
   font-size: 20px;
   padding: 0 auto;
   width: 60%;
+  overflow: hidden;
 }
 
 .image-container img {
   flex-grow: 1;
   max-height: 550px;
   padding-top: 50px;
-  position: relative;
+  overflow: hidden;
 }
 
+.atlasphoto {
+  position: relative;
+  -webkit-animation: linear infinite;
+  -webkit-animation-name: atlas-run;
+  -webkit-animation-duration: 4s;
+}
 
+.spotphoto {
+  position: relative;
+  -webkit-animation: linear infinite;
+  -webkit-animation-name: spot-run;
+  -webkit-animation-duration: 4s;
+}
 
-@keyframes image {
-  0%   {background-color:red; left:0px; top:0px;}
-  25%  {background-color:yellow; left:200px; top:0px;}
-  50%  {background-color:blue; left:200px; top:200px;}
-  75%  {background-color:green; left:0px; top:200px;}
-  100% {background-color:red; left:0px; top:0px;}
+@keyframes atlas-run {
+  0%  {transform: unset; right:-15vw;}
+  40% {transform: unset; right:15vw}
+  50% {transform: scaleX(-1); right:15vw;}
+  85%  {transform: scaleX(-1); right:-15vw;}
+  100% {right: -15vw;}
+}
+
+@keyframes spot-run {
+  0%  {transform: unset; left:-15vw;}
+  40% {transform: unset; left:15vw}
+  50% {transform: scaleX(-1); left:15vw;}
+  85%  {transform: scaleX(-1); left:-15vw;}
+  100% {left: -15vw;}
 }
 
 
