@@ -11,18 +11,17 @@
 
 <main id="main-doc">
 
-    <section class="main-section">
+    <section class="main-section" id="SDK_Reference">
 
-        <header id="SDK_Reference">SDK Reference</header>
+        <header>SDK Reference</header>
 
         <p>The Spotify Web Playback SDK is a public JavaScript SDK that allows you to implement local streaming playback of Spotify content in their web applications.</p>
 
     </section>
 
+    <section class="main-section" id="Initializing_the_SDK">
 
-    <section class="main-section"></section>
-
-        <header id="Initializing_the_SDK">Initializing the SDK</header>
+        <header>Initializing the SDK</header>
 
         <p>In order to initialize the Web Playback SDK, you need to embed a single line of JavaScript inside of your application. It should belong inside the <code>&ltbody&gt</code> tag:</p>
 
@@ -39,9 +38,11 @@
         &lt/script&gt
         </code></pre>
 
-    <section class="main-section"></section>
+    </section>
 
-        <header id="Playing_a_Spotify_URI">Playing a Spotify URI</header>
+    <section class="main-section" id="Playing_a_Spotify_URI">
+
+        <header>Playing a Spotify URI</header>
 
         <p>The Web Playback SDK is only designed to create a local Connect device in your browser. The Web API is for additional actions such as search or playing a Spotify URI on any of a user’s Connect devices.</p>
 
@@ -79,9 +80,11 @@
 
     <p>For more information, check out the Start/Resume a User’s Playback Web API endpoint.</p>
 
-    <section class="main-section"></section>
+    </section>
 
-        <header id="API_Reference">API Reference</header>
+    <section class="main-section" id="API_Reference">
+
+        <header>API Reference</header>
 
         <li id="Spotify.Player">Spotify.Player</li>
 
@@ -355,9 +358,11 @@
 
         </dl>
 
-    <section class="main-section"></section>
+    </section>
 
-        <header id="Events">Events</header>
+    <section class="main-section" id="Events">
+
+        <header>Events</header>
 
         <li id="ready">ready</li>
 
@@ -419,9 +424,11 @@
 
         </dl>    
 
-    <section class="main-section"></section>
+    </section>
 
-        <header id="Error_Reference">Error Reference</header>
+    <section class="main-section" id="Error_Reference">
+
+        <header>Error Reference</header>
 
         <li id="initialization_error">initialization_error</li>
 
@@ -483,11 +490,17 @@
 
         </dl>
 
-    <section class="main-section"></section>
+    </section>
 
-        <header id="Objects">Objects</header>
+    <section class="main-section" id="Objects">
 
-        <li id="WebPlaybackPlayer_Object">WebPlaybackPlayer Object</li>
+        <header>Objects</header>
+
+    </section>
+
+    <section class="main-section" id="WebPlaybackPlayer_Object">
+
+        <header>WebPlaybackPlayer Object</header>
 
         <p>This is an object that is provided in the <code>ready</code> event as an argument. WebPlaybackPlayer objects contain information related to the current player instance of the Web Playback SDK.</p>
 
@@ -495,7 +508,11 @@
         { device_id: "c349add90ccf047f4e737492b69ba912bdc55f6a" }
         </code></pre>
 
-        <li id="WebPlaybackState_Object">WWebPlaybackState Object</li>
+    </section>
+
+    <section class="main-section" id="WebPlaybackState_Object">
+
+        <header>WebPlaybackState Object</header>
 
         <p>This is an object that is provided every time <code>Spotify.Player#getCurrentState</code> is called. It contains information on context, permissions, playback state, the user’s session, and more.</p>
 
@@ -528,30 +545,62 @@
         }
         </code></pre>
 
+    </section>
+
+    <section class="main-section" id="WebPlaybackTrack_Object">
+
+        <header>WebPlaybackTrack Object</header>
+
+        <p>This is an object that is provided inside <code>track_window</code> from the WebPlaybackState Object. Track objects are Spotify Web API compatible objects containing metadata on Spotify content.</p>
+
+        <pre><code>
+        {
+        uri: "spotify:track:xxxx", // Spotify URI
+        id: "xxxx",                // Spotify ID from URI (can be null)
+        type: "track",             // Content type: can be "track", "episode" or "ad"
+        media_type: "audio",       // Type of file: can be "audio" or "video"
+        name: "Song Name",         // Name of content
+        is_playable: true,         // Flag indicating whether it can be played
+        album: {
+            uri: 'spotify:album:xxxx', // Spotify Album URI
+            name: 'Album Name',
+            images: [
+            { url: "https://image/xxxx" }
+            ]
+        },
+        artists: [
+            { uri: 'spotify:artist:xxxx', name: "Artist Name" }
+        ]
+        }
+        </code></pre>
+
+    </section>
+
+    <section class="main-section" id="WebPlaybackError_Object">
+
+        <header>WebPlaybackError Object</header>
+
+        <p>This is an object that is provided in all error handlers from the Web Playback SDK. It is referred to as e and looks like this:</p>
+
+        <pre><code>
+        { message: "This will contain a message explaining the error." }
+        </code></pre>
+
+    </section>
 
 
-
-
-
-
-
-
-
-
-
-
-    <section class="main-section"></section>
-
-
-    <section class="main-section">
-        <header id="Reference">Reference</header>
+    <section class="main-section" id="Reference">
+        
+        <header>Reference</header>
+        
         <p>All information on this page is from
             <a href="https://developer.spotify.com/documentation/web-playback-sdk/reference/" target="blank"> Spotify for Developers</a>
         website.
         </p>
+
     </section>
 
-
+    
     <nav id="navbar">
 
         <header>Web Playback SDK Reference</header>
@@ -559,7 +608,7 @@
         <p>The Spotify Web Playback SDK is a public JavaScript SDK that allows you to implement local streaming playback of Spotify content in their web applications.</p>
 
         <a href="#SDK_Reference" class="nav-link">SDK Reference</a>
-        <a href="" class="nav-link"></a>
+        <a href="#Initializing_the_SDK" class="nav-link">Initializing the SDK</a>
         <a href="" class="nav-link"></a>
         <a href="" class="nav-link"></a>
         <a href="" class="nav-link"></a>
