@@ -16,7 +16,13 @@
 
         <header>SDK Reference</header>
 
+        <p>The Web Playback SDK is client-side JavaScript library which allows you to create a new player in Spotify Connect and play any audio track from Spotify in the browser via Encrypted Media Extensions.</p>
+
+        <p>You can read more about the SDK in the overview, or dig into the reference documentation. In this Quick Start, we will be adding the Web Playback SDK to a simple HTML page.</p>
+        
         <p>The Spotify Web Playback SDK is a public JavaScript SDK that allows you to implement local streaming playback of Spotify content in their web applications.</p>
+
+        <p>You will need an access token from your personal Spotify Premium account. Click the button below to quickly obtain your access token.</p>
 
     </section>
 
@@ -30,7 +36,9 @@
         &ltscript src="https://sdk.scdn.co/spotify-player.js"&gt&lt/script&gt
     </code></pre>
 
-        <p>You are then required to define a <code>window.onSpotifyWebPlaybackSDKReady</code> method immediately. This will be executed once the Web Playback SDK has successfully loaded and the Spotify.Player is available to load the SDK.</p>
+        <p>You are then required to define a <code>window.onSpotifyWebPlaybackSDKReady</code> method immediately.</p>
+        
+        <p>This will be executed once the Web Playback SDK has successfully loaded and the Spotify.Player is available to load the SDK.</p>
 
         <pre><code>
         &ltscript&gt
@@ -80,7 +88,7 @@
         </code>
         </pre>
 
-    <p>For more information, check out the Start/Resume a User’s Playback Web API endpoint.</p>
+        <p>For more information, check out the Start/Resume a User’s Playback Web API endpoint.</p>
 
     </section>
 
@@ -613,7 +621,7 @@
         <a href="#Playing_a_Spotify_URI" class="nav-link">Playing a Spotify URI</a>
 
         <a href="#API_Reference" class="nav-link">API Reference</a>
-            <a href="#Spotify.Player" class="nav-link">Spotify.Player</a>
+            <a href="#Spotify.Player" class="nav-sub-link">Spotify.Player</a>
             <a href="#Spotify.Player#connect" class="nav-sub-link">#connect</a>
             <a href="#Spotify.Player#addListener" class="nav-sub-link">#addListener</a>
             <a href="#Spotify.Player#removeListener" class="nav-sub-link">#removeListener</a>
