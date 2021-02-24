@@ -198,55 +198,350 @@
             <dd>Rename the Spotify Player device. This is visible across all Spotify Connect devices.</dd>
 
             <dt>Response</dt>
-            <dd>Returns a <code>Promise</code>. It will return either a WebPlaybackState object or <code>null</code> depending on if the user is successfully connected.</dd>
+            <dd>Returns an empty <code>Promise</code>.</dd>
 
             <dt>Code Sample</dt>
             <dd><pre><code>
-        player.getCurrentState().then(state => {
-        if (!state) {
-            console.error('User is not playing music through the Web Playback SDK');
-            return;
-        }
-
-        let {
-            current_track,
-            next_tracks: [next_track]
-        } = state.track_window;
-
-        console.log('Currently Playing', current_track);
-        console.log('Playing Next', next_track);
+        player.setName("My New Player Name").then(() => {
+        console.log('Player name updated!');
         });
             </code></pre></dd>
 
         </dl>
 
-        
+        <li id="Spotify.Player#getVolume">Spotify.Player#getVolume</li>
+
+        <dl>
+            <dt>Description</dt>
+            <dd>Get the local volume currently set in the Web Playback SDK.</dd>
+
+            <dt>Response</dt>
+            <dd>Returns a <code>Promise</code> containing the local volume (as a <code>Float</code> between <code>0</code> and <code>1</code>).</dd>
+
+            <dt>Code Sample</dt>
+            <dd><pre><code>
+        player.getVolume().then(volume => {
+        let volume_percentage = volume * 100;
+        console.log(`The volume of the player is ${volume_percentage}%`);
+        });
+            </code></pre></dd>
+
+        </dl>
+
+        <li id="Spotify.Player#setVolume">Spotify.Player#setVolume</li>
+
+        <dl>
+            <dt>Description</dt>
+            <dd>Set the local volume for the Web Playback SDK.</dd>
+
+            <dt>Response</dt>
+            <dd>Returns an empty <code>Promise</code>.</dd>
+
+            <dt>Code Sample</dt>
+            <dd><pre><code>
+        player.setVolume(0.5).then(() => {
+        console.log('Volume updated!');
+        });
+            </code></pre></dd>
+
+        </dl>
+
+        <li id="Spotify.Player#pause">Spotify.Player#pause</li>
+
+        <dl>
+            <dt>Description</dt>
+            <dd>Pause the local playback.</dd>
+
+            <dt>Response</dt>
+            <dd>Returns an empty <code>Promise</code>.</dd>
+
+            <dt>Code Sample</dt>
+            <dd><pre><code>
+        player.pause().then(() => {
+        console.log('Paused!');
+        });
+            </code></pre></dd>
+
+        </dl>
+
+        <li id="Spotify.Player#resume">Spotify.Player#resume</li>
+
+        <dl>
+            <dt>Description</dt>
+            <dd>Resume the local playback.</dd>
+
+            <dt>Response</dt>
+            <dd>Returns an empty <code>Promise</code>.</dd>
+
+            <dt>Code Sample</dt>
+            <dd><pre><code>
+        player.resume().then(() => {
+        console.log('Resumed!');
+        });
+            </code></pre></dd>
+
+        </dl>
+
+        <li id="Spotify.Player#togglePlay">Spotify.Player#togglePlay</li>
+
+        <dl>
+            <dt>Description</dt>
+            <dd>Resume/pause the local playback.</dd>
+
+            <dt>Response</dt>
+            <dd>Returns an empty <code>Promise</code>.</dd>
+
+            <dt>Code Sample</dt>
+            <dd><pre><code>
+        player.togglePlay().then(() => {
+        console.log('Toggled playback!');
+        });
+            </code></pre></dd>
+
+        </dl>
+
+        <li id="Spotify.Player#seek">Spotify.Player#seek</li>
+
+        <dl>
+            <dt>Description</dt>
+            <dd>Seek to a position in the current track in local playback.</dd>
+
+            <dt>Response</dt>
+            <dd>Returns an empty <code>Promise</code>.</dd>
+
+            <dt>Code Sample</dt>
+            <dd><pre><code>
+        // Seek to a minute into the track
+        player.seek(60 * 1000).then(() => {
+        console.log('Changed position!');
+        });
+            </code></pre></dd>
+
+        </dl>
+
+        <li id="Spotify.Player#previousTrack">Spotify.Player#previousTrack</li>
+
+        <dl>
+            <dt>Description</dt>
+            <dd>Switch to the previous track in local playback.</dd>
+
+            <dt>Response</dt>
+            <dd>Returns an empty <code>Promise</code>.</dd>
+
+            <dt>Code Sample</dt>
+            <dd><pre><code>
+        player.previousTrack().then(() => {
+        console.log('Set to previous track!');
+        });
+            </code></pre></dd>
+
+        </dl>
+
+        <li id="Spotify.Player#nextTrack">Spotify.Player#nextTrack</li>
+
+        <dl>
+            <dt>Description</dt>
+            <dd>Skip to the next track in local playback.</dd>
+
+            <dt>Response</dt>
+            <dd>Returns an empty <code>Promise</code>.</dd>
+
+            <dt>Code Sample</dt>
+            <dd><pre><code>
+        player.nextTrack().then(() => {
+        console.log('Skipped to next track!');
+        });
+            </code></pre></dd>
+
+        </dl>
+
+    <section class="main-section"></section>
+
+        <header id="Events">Events</header>
+
+        <li id="ready">ready</li>
+
+        <dl>
+            <dt>Description</dt>
+            <dd>Emitted when the Web Playback SDK has successfully connected and is ready to stream content in the browser from Spotify.</dd>
+
+            <dt>Response</dt>
+            <dd>Returns a WebPlaybackPlayer object.</dd>
+
+            <dt>Code Sample</dt>
+            <dd><pre><code>
+        player.addListener('ready', ({ device_id }) => {
+        console.log('Connected with Device ID', device_id);
+        });
+            </code></pre></dd>
+
+        </dl>
+
+        <li id="not_ready">not_ready</li>
+
+        <dl>
+            <dt>Description</dt>
+            <dd>Emitted when the Web Playback SDK is not ready to play content, typically due to no internet connection.</dd>
+
+            <dt>Response</dt>
+            <dd>Returns a WebPlaybackPlayer object.</dd>
+
+            <dt>Code Sample</dt>
+            <dd><pre><code>
+        player.addListener('not_ready', ({ device_id }) => {
+        console.log('Device ID is not ready for playback', device_id);
+        });
+            </code></pre></dd>
+
+        </dl>
+
+        <li id="player_state_changed">player_state_changed</li>
+
+        <dl>
+            <dt>Description</dt>
+            <dd>Emitted when the state of the local playback has changed. It may be also executed in random intervals.</dd>
+
+            <dt>Response</dt>
+            <dd>Returns a WebPlaybackState object.</dd>
+
+            <dt>Code Sample</dt>
+            <dd><pre><code>
+        player.addListener('player_state_changed', ({
+        position,
+        duration,
+        track_window: { current_track }
+        }) => {
+        console.log('Currently Playing', current_track);
+        console.log('Position in Song', position);
+        console.log('Duration of Song', duration);
+        });
+            </code></pre></dd>
+
+        </dl>    
+
+    <section class="main-section"></section>
+
+        <header id="Error_Reference">Error Reference</header>
+
+        <li id="initialization_error">initialization_error</li>
+
+        <dl>
+            <dt>Description</dt>
+            <dd>Emitted when the Spotify.Player fails to instantiate a player capable of playing content in the current environment. Most likely due to the browser not supporting EME protection.</dd>
+
+            <dt>Code Sample</dt>
+            <dd><pre><code>
+        player.on('initialization_error', ({ message }) => {
+        console.error('Failed to initialize', message);
+        });
+            </code></pre></dd>
+
+        </dl>
+
+        <li id="authentication_error">authentication_error</li>
+
+        <dl>
+            <dt>Description</dt>
+            <dd>Emitted when the Spotify.Player fails to instantiate a valid Spotify connection from the access token provided to <code>getOAuthToken</code>.</dd>
+
+            <dt>Code Sample</dt>
+            <dd><pre><code>
+        player.on('authentication_error', ({ message }) => {
+        console.error('Failed to authenticate', message);
+        });
+            </code></pre></dd>
+
+        </dl>
+
+        <li id="account_error">account_error</li>
+
+        <dl>
+            <dt>Description</dt>
+            <dd>Emitted when the user authenticated does not have a valid Spotify Premium subscription.</dd>
+
+            <dt>Code Sample</dt>
+            <dd><pre><code>
+        player.on('account_error', ({ message }) => {
+        console.error('Failed to validate Spotify account', message);
+        });
+            </code></pre></dd>
+
+        </dl>
+
+        <li id="playback_error">playback_error</li>
+
+        <dl>
+            <dt>Description</dt>
+            <dd>Emitted when loading and/or playing back a track failed.</dd>
+
+            <dt>Code Sample</dt>
+            <dd><pre><code>
+        player.on('playback_error', ({ message }) => {
+        console.error('Failed to perform playback', message);
+        });
+            </code></pre></dd>
+
+        </dl>
+
+    <section class="main-section"></section>
+
+        <header id="Objects">Objects</header>
+
+        <li id="WebPlaybackPlayer_Object">WebPlaybackPlayer Object</li>
+
+        <p>This is an object that is provided in the <code>ready</code> event as an argument. WebPlaybackPlayer objects contain information related to the current player instance of the Web Playback SDK.</p>
+
+        <pre><code>
+        { device_id: "c349add90ccf047f4e737492b69ba912bdc55f6a" }
+        </code></pre>
+
+        <li id="WebPlaybackState_Object">WWebPlaybackState Object</li>
+
+        <p>This is an object that is provided every time <code>Spotify.Player#getCurrentState</code> is called. It contains information on context, permissions, playback state, the user’s session, and more.</p>
+
+        <pre><code>
+        {
+        context: {
+            uri: 'spotify:album:xxx', // The URI of the context (can be null)
+            metadata: {},             // Additional metadata for the context (can be null)
+        },
+        disallows: {                // A simplified set of restriction controls for
+            pausing: false,           // The current track. By default, these fields
+            peeking_next: false,      // will either be set to false or undefined, which
+            peeking_prev: false,      // indicates that the particular operation is
+            resuming: false,          // allowed. When the field is set to `true`, this
+            seeking: false,           // means that the operation is not permitted. For
+            skipping_next: false,     // example, `skipping_next`, `skipping_prev` and
+            skipping_prev: false      // `seeking` will be set to `true` when playing an
+                                    // ad track.
+        },
+        paused: false,  // Whether the current track is paused.
+        position: 0,    // The position_ms of the current track.
+        repeat_mode: 0, // The repeat mode. No repeat mode is 0,
+                        // once-repeat is 1 and full repeat is 2.
+        shuffle: false, // True if shuffled, false otherwise.
+        track_window: {
+            current_track: &ltWebPlaybackTrack&gt,                              // The track currently on local playback
+            previous_tracks: [&ltWebPlaybackTrack&gt, &ltWebPlaybackTrack&gt, ...], // Previously played tracks. Number can vary.
+            next_tracks: [&ltWebPlaybackTrack&gt, &ltWebPlaybackTrack&gt, ...]      // Tracks queued next. Number can vary.
+        }
+        }
+        </code></pre>
+
+
+
+
+
+
+
+
+
+
 
 
 
     <section class="main-section"></section>
 
-
-
-
-
-    
-
-    <section class="main-section"></section>
-
-    <p></p>
-
-    <code></code>
-
-    <section class="main-section"></section>
-
-    <p></p>
-
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
 
     <section class="main-section">
         <header id="Reference">Reference</header>
