@@ -39,7 +39,7 @@ body {
 }
 
 #last-link {
-    margin-bottom: 20px;
+    margin-bottom: 40px;
 }
 
 #main-doc {
@@ -89,13 +89,12 @@ dd{
     #navbar header {
         display: none;
     }
-
-  .nav-bar {
-    padding-top: 15px;
-  }
-  .sidenav a {
-    font-size: 18px;
-  }
+    #navbar a {
+        font-size: 10px;
+    }
+    .nav-bar {
+        padding-top: 15px;
+    }
 }
 
 .nav-bar {
