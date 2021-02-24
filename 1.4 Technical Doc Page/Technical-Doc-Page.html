@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FCC 1.4 Technical Doc Page</title>
     <link rel="stylesheet" href="/1.4 Technical Doc Page/styles/Technical-Doc-Page.css">
+    <script src="https://kit.fontawesome.com/817c5a4b3b.js" crossorigin="anonymous"></script>
 </head>
 <body>
 
@@ -96,7 +97,7 @@
             <dd><code>Void</code></dd>
 
             <dt>Code Sample</dt>
-            <dd><pre><code>
+        <pre><code>
         var player = new Spotify.Player({
             name: 'Carly Rae Jepsen Player',
             getOAuthToken: callback => {
@@ -106,7 +107,7 @@
             },
             volume: 0.5
         });
-            </code></pre></dd>
+            </code></pre>
 
         </dl>
 
@@ -120,13 +121,13 @@
             <dd>Returns a <code>Promise</code> containing a <code>Boolean</code> (either <code>true</code> or <code>false</code>) with the success of the connection.</dd>
 
             <dt>Code Sample</dt>
-            <dd><pre><code>
+        <pre><code>
         player.connect().then(success => {
         if (success) {
             console.log('The Web Playback SDK successfully connected to Spotify!');
         }
         })
-            </code></pre></dd>
+            </code></pre>
 
         </dl>
 
@@ -140,9 +141,9 @@
             <dd>Returns a <code>Boolean</code>. Returns <code>true</code> if the event listener for the <code>event_name</code> is unique. See #removeListener for removing existing listeners.</dd>
 
             <dt>Code Sample</dt>
-            <dd><pre><code>
+        <pre><code>
         player.disconnect()
-            </code></pre></dd>
+            </code></pre>
 
         </dl>
 
@@ -156,12 +157,12 @@
             <dd>Returns a <code>Boolean</code>. Returns <code>true</code> if the event name is valid with registered callbacks from #addListener.</dd>
 
             <dt>Code Sample</dt>
-            <dd><pre><code>
+        <pre><code>
         // Removes all "ready" events
         player.removeListener('ready');
         // Remove a specific "ready" listener
         player.removeListener('ready', yourCallback)
-            </code></pre></dd>
+            </code></pre>
 
         </dl>
 
@@ -175,7 +176,7 @@
             <dd>Returns a <code>Promise</code>. It will return either a WebPlaybackState object or <code>null</code> depending on if the user is successfully connected.</dd>
 
             <dt>Code Sample</dt>
-            <dd><pre><code>
+        <pre><code>
         player.getCurrentState().then(state => {
         if (!state) {
             console.error('User is not playing music through the Web Playback SDK');
@@ -190,7 +191,7 @@
         console.log('Currently Playing', current_track);
         console.log('Playing Next', next_track);
         });
-            </code></pre></dd>
+            </code></pre>
 
         </dl>
 
@@ -204,11 +205,11 @@
             <dd>Returns an empty <code>Promise</code>.</dd>
 
             <dt>Code Sample</dt>
-            <dd><pre><code>
+        <pre><code>
         player.setName("My New Player Name").then(() => {
         console.log('Player name updated!');
         });
-            </code></pre></dd>
+            </code></pre>
 
         </dl>
 
@@ -222,12 +223,12 @@
             <dd>Returns a <code>Promise</code> containing the local volume (as a <code>Float</code> between <code>0</code> and <code>1</code>).</dd>
 
             <dt>Code Sample</dt>
-            <dd><pre><code>
+        <pre><code>
         player.getVolume().then(volume => {
         let volume_percentage = volume * 100;
         console.log(`The volume of the player is ${volume_percentage}%`);
         });
-            </code></pre></dd>
+            </code></pre>
 
         </dl>
 
@@ -241,11 +242,11 @@
             <dd>Returns an empty <code>Promise</code>.</dd>
 
             <dt>Code Sample</dt>
-            <dd><pre><code>
+        <pre><code>
         player.setVolume(0.5).then(() => {
         console.log('Volume updated!');
         });
-            </code></pre></dd>
+            </code></pre>
 
         </dl>
 
@@ -259,11 +260,11 @@
             <dd>Returns an empty <code>Promise</code>.</dd>
 
             <dt>Code Sample</dt>
-            <dd><pre><code>
+        <pre><code>
         player.pause().then(() => {
         console.log('Paused!');
         });
-            </code></pre></dd>
+            </code></pre>
 
         </dl>
 
@@ -277,11 +278,11 @@
             <dd>Returns an empty <code>Promise</code>.</dd>
 
             <dt>Code Sample</dt>
-            <dd><pre><code>
+        <pre><code>
         player.resume().then(() => {
         console.log('Resumed!');
         });
-            </code></pre></dd>
+            </code></pre>
 
         </dl>
 
@@ -295,11 +296,11 @@
             <dd>Returns an empty <code>Promise</code>.</dd>
 
             <dt>Code Sample</dt>
-            <dd><pre><code>
+        <pre><code>
         player.togglePlay().then(() => {
         console.log('Toggled playback!');
         });
-            </code></pre></dd>
+            </code></pre>
 
         </dl>
 
@@ -313,12 +314,12 @@
             <dd>Returns an empty <code>Promise</code>.</dd>
 
             <dt>Code Sample</dt>
-            <dd><pre><code>
+        <pre><code>
         // Seek to a minute into the track
         player.seek(60 * 1000).then(() => {
         console.log('Changed position!');
         });
-            </code></pre></dd>
+            </code></pre>
 
         </dl>
 
@@ -332,11 +333,11 @@
             <dd>Returns an empty <code>Promise</code>.</dd>
 
             <dt>Code Sample</dt>
-            <dd><pre><code>
+        <pre><code>
         player.previousTrack().then(() => {
         console.log('Set to previous track!');
         });
-            </code></pre></dd>
+            </code></pre>
 
         </dl>
 
@@ -350,11 +351,11 @@
             <dd>Returns an empty <code>Promise</code>.</dd>
 
             <dt>Code Sample</dt>
-            <dd><pre><code>
+        <pre><code>
         player.nextTrack().then(() => {
         console.log('Skipped to next track!');
         });
-            </code></pre></dd>
+            </code></pre>
 
         </dl>
 
@@ -374,11 +375,11 @@
             <dd>Returns a WebPlaybackPlayer object.</dd>
 
             <dt>Code Sample</dt>
-            <dd><pre><code>
+        <pre><code>
         player.addListener('ready', ({ device_id }) => {
         console.log('Connected with Device ID', device_id);
         });
-            </code></pre></dd>
+        </code></pre>
 
         </dl>
 
@@ -392,11 +393,11 @@
             <dd>Returns a WebPlaybackPlayer object.</dd>
 
             <dt>Code Sample</dt>
-            <dd><pre><code>
+        <pre><code>
         player.addListener('not_ready', ({ device_id }) => {
         console.log('Device ID is not ready for playback', device_id);
         });
-            </code></pre></dd>
+        </code></pre>
 
         </dl>
 
@@ -410,7 +411,7 @@
             <dd>Returns a WebPlaybackState object.</dd>
 
             <dt>Code Sample</dt>
-            <dd><pre><code>
+        <pre><code>
         player.addListener('player_state_changed', ({
         position,
         duration,
@@ -420,7 +421,7 @@
         console.log('Position in Song', position);
         console.log('Duration of Song', duration);
         });
-            </code></pre></dd>
+        </code></pre>
 
         </dl>    
 
@@ -437,11 +438,11 @@
             <dd>Emitted when the Spotify.Player fails to instantiate a player capable of playing content in the current environment. Most likely due to the browser not supporting EME protection.</dd>
 
             <dt>Code Sample</dt>
-            <dd><pre><code>
+        <pre><code>
         player.on('initialization_error', ({ message }) => {
         console.error('Failed to initialize', message);
         });
-            </code></pre></dd>
+        </code></pre>
 
         </dl>
 
@@ -452,11 +453,11 @@
             <dd>Emitted when the Spotify.Player fails to instantiate a valid Spotify connection from the access token provided to <code>getOAuthToken</code>.</dd>
 
             <dt>Code Sample</dt>
-            <dd><pre><code>
+        <pre><code>
         player.on('authentication_error', ({ message }) => {
         console.error('Failed to authenticate', message);
         });
-            </code></pre></dd>
+        </code></pre>
 
         </dl>
 
@@ -467,11 +468,11 @@
             <dd>Emitted when the user authenticated does not have a valid Spotify Premium subscription.</dd>
 
             <dt>Code Sample</dt>
-            <dd><pre><code>
+        <pre><code>
         player.on('account_error', ({ message }) => {
         console.error('Failed to validate Spotify account', message);
         });
-            </code></pre></dd>
+        </code></pre>
 
         </dl>
 
@@ -482,11 +483,11 @@
             <dd>Emitted when loading and/or playing back a track failed.</dd>
 
             <dt>Code Sample</dt>
-            <dd><pre><code>
+        <pre><code>
         player.on('playback_error', ({ message }) => {
         console.error('Failed to perform playback', message);
         });
-            </code></pre></dd>
+        </code></pre>
 
         </dl>
 
@@ -603,14 +604,15 @@
     
     <nav id="navbar">
 
-        <header>Spotify for Developers</header>
+        <header>
+            <i class="fab fa-spotify"></i> Spotify for Developers</header>
 
         <a href="#SDK_Reference" class="nav-link">SDK Reference</a>
         <a href="#Initializing_the_SDK" class="nav-link">Initializing the SDK</a>
         <a href="#Playing_a_Spotify_URI" class="nav-link">Playing a Spotify URI</a>
 
         <a href="#API_Reference" class="nav-link">API Reference</a>
-            <a href="#Spotify.Player" class="nav-sub-link">Spotify.Player</a>
+            <a href="#Spotify.Player" class="nav-link">Spotify.Player</a>
             <a href="#Spotify.Player#connect" class="nav-sub-link">#connect</a>
             <a href="#Spotify.Player#addListener" class="nav-sub-link">#addListener</a>
             <a href="#Spotify.Player#removeListener" class="nav-sub-link">#removeListener</a>
@@ -637,7 +639,7 @@
             <a href="#playback_error" class="nav-sub-link">playback_error</a>
 
         <a href="#Objects" class="nav-link">Objects</a>
-            <a href="#WebPlaybackPlayer_Object" class="nav-link">WebPlaybackPlayer</a>
+            <a href="#WebPlaybackPlayer_Object" class="nav-sub-link">WebPlaybackPlayer</a>
             <a href="#WebPlaybackState_Object" class="nav-sub-link">WebPlaybackState</a>
             <a href="#WebPlaybackTrack_Object" class="nav-sub-link">WebPlaybackTrack</a>
             <a href="#WebPlaybackError_Object" class="nav-sub-link">WebPlaybackError</a>
