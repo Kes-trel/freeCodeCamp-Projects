@@ -24,37 +24,213 @@
 
         <header id="Initializing_the_SDK">Initializing the SDK</header>
 
-        <p>
-            In order to initialize the Web Playback SDK, you need to embed a single line of JavaScript inside of your application. It should belong inside the <body> tag:
-        </p>
+        <p>In order to initialize the Web Playback SDK, you need to embed a single line of JavaScript inside of your application. It should belong inside the <code>&ltbody&gt</code> tag:</p>
+
+        <pre><code>
+        &ltscript src="https://sdk.scdn.co/spotify-player.js"&gt&lt/script&gt</code></pre>
+
+        <p>You are then required to define a <code>window.onSpotifyWebPlaybackSDKReady</code> method immediately. This will be executed once the Web Playback SDK has successfully loaded and the Spotify.Player is available to load the SDK.</p>
+
+        <pre><code>
+        &ltscript&gt
+            window.onSpotifyWebPlaybackSDKReady = () => {
+              // You can now initialize Spotify.Player and use the SDK
+            };
+        &lt/script&gt
+        </code></pre>
 
     <section class="main-section"></section>
 
-    <p></p>
+        <header id="Playing_a_Spotify_URI">Playing a Spotify URI</header>
 
-    <code></code>
+        <p>The Web Playback SDK is only designed to create a local Connect device in your browser. The Web API is for additional actions such as search or playing a Spotify URI on any of a user’s Connect devices.</p>
 
-    <code></code>
+        <p>Here’s a JavaScript code example of how to play a Spotify URI using the Web API:</p>
 
-    <p></p>
+        <pre>
+        <code>
+        const play = ({
+            spotify_uri,
+            playerInstance: {
+                _options: {
+                getOAuthToken,
+                id
+                }
+            }
+            }) => {
+             getOAuthToken(access_token => {
+                 fetch(`https://api.spotify.com/v1/me/player/play?device_id=${id}`, {
+                  method: 'PUT',
+                 body: JSON.stringify({ uris: [spotify_uri] }),
+                headers: {
+                     'Content-Type': 'application/json',
+                     'Authorization': `Bearer ${access_token}`
+                 },
+                 });
+             });
+            };
+              
+            play({
+            playerInstance: new Spotify.Player({ name: "..." }),
+            spotify_uri: 'spotify:track:7xGfFoTpQ2E7fRF5lN10tr',
+            });
+        </code>
+        </pre>
+
+    <p>For more information, check out the Start/Resume a User’s Playback Web API endpoint.</p>
 
     <section class="main-section"></section>
 
-    <p></p>
+        <header id="API_Reference">API Reference</header>
 
-    <code></code>
+        <li id="Spotify.Player">Spotify.Player</li>
 
-    <code></code>
+        <dl>
+            <dt>Description</dt>
+            <dd>The main constructor for initializing the Web Playback SDK. It should contain an object with the player name, volume and access token.</dd>
 
-    <p></p>
+            <dt>Response</dt>
+            <dd><code>Void</code></dd>
+
+            <dt>Code Sample</dt>
+            <dd><pre><code>
+        var player = new Spotify.Player({
+            name: 'Carly Rae Jepsen Player',
+            getOAuthToken: callback => {
+            // Run code to get a fresh access token
+        
+            callback('access token here');
+            },
+            volume: 0.5
+        });
+            </code></pre></dd>
+
+        </dl>
+
+        <li id="Spotify.Player#connect">Spotify.Player#connect</li>
+
+        <dl>
+            <dt>Description</dt>
+            <dd>Connect our Web Playback SDK instance to Spotify with the credentials provided during initialization.</dd>
+
+            <dt>Response</dt>
+            <dd>Returns a <code>Promise</code> containing a <code>Boolean</code> (either <code>true</code> or <code>false</code>) with the success of the connection.</dd>
+
+            <dt>Code Sample</dt>
+            <dd><pre><code>
+        player.connect().then(success => {
+        if (success) {
+            console.log('The Web Playback SDK successfully connected to Spotify!');
+        }
+        })
+            </code></pre></dd>
+
+        </dl>
+
+        <li id="Spotify.Player#addListener">Spotify.Player#addListener</li>
+
+        <dl>
+            <dt>Description</dt>
+            <dd>Create a new event listener in the Web Playback SDK. Alias for <code>Spotify.Player#on</code>.</dd>
+
+            <dt>Response</dt>
+            <dd>Returns a <code>Boolean</code>. Returns <code>true</code> if the event listener for the <code>event_name</code> is unique. See #removeListener for removing existing listeners.</dd>
+
+            <dt>Code Sample</dt>
+            <dd><pre><code>
+        player.disconnect()
+            </code></pre></dd>
+
+        </dl>
+
+        <li id="Spotify.Player#removeListener">Spotify.Player#removeListener</li>
+
+        <dl>
+            <dt>Description</dt>
+            <dd>Remove an event listener in the Web Playback SDK.</dd>
+
+            <dt>Response</dt>
+            <dd>Returns a <code>Boolean</code>. Returns <code>true</code> if the event name is valid with registered callbacks from #addListener.</dd>
+
+            <dt>Code Sample</dt>
+            <dd><pre><code>
+        // Removes all "ready" events
+        player.removeListener('ready');
+        // Remove a specific "ready" listener
+        player.removeListener('ready', yourCallback)
+            </code></pre></dd>
+
+        </dl>
+
+        <li id="Spotify.Player#getCurrentState">Spotify.Player#getCurrentState</li>
+
+        <dl>
+            <dt>Description</dt>
+            <dd>Collect metadata on local playback.</dd>
+
+            <dt>Response</dt>
+            <dd>Returns a <code>Promise</code>. It will return either a WebPlaybackState object or <code>null</code> depending on if the user is successfully connected.</dd>
+
+            <dt>Code Sample</dt>
+            <dd><pre><code>
+        player.getCurrentState().then(state => {
+        if (!state) {
+            console.error('User is not playing music through the Web Playback SDK');
+            return;
+        }
+
+        let {
+            current_track,
+            next_tracks: [next_track]
+        } = state.track_window;
+
+        console.log('Currently Playing', current_track);
+        console.log('Playing Next', next_track);
+        });
+            </code></pre></dd>
+
+        </dl>
+
+        <li id="Spotify.Player#setName">Spotify.Player#setName</li>
+
+        <dl>
+            <dt>Description</dt>
+            <dd>Rename the Spotify Player device. This is visible across all Spotify Connect devices.</dd>
+
+            <dt>Response</dt>
+            <dd>Returns a <code>Promise</code>. It will return either a WebPlaybackState object or <code>null</code> depending on if the user is successfully connected.</dd>
+
+            <dt>Code Sample</dt>
+            <dd><pre><code>
+        player.getCurrentState().then(state => {
+        if (!state) {
+            console.error('User is not playing music through the Web Playback SDK');
+            return;
+        }
+
+        let {
+            current_track,
+            next_tracks: [next_track]
+        } = state.track_window;
+
+        console.log('Currently Playing', current_track);
+        console.log('Playing Next', next_track);
+        });
+            </code></pre></dd>
+
+        </dl>
+
+        
+
+
 
     <section class="main-section"></section>
 
-    <p></p>
 
-    <code></code>
 
-    <p></p>
+
+
+    
 
     <section class="main-section"></section>
 
