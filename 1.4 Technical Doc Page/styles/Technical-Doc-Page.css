@@ -29,7 +29,7 @@ body {
 }
 
 #navbar header {
-  padding: 10px 25px;
+  padding: 20px 25px;
   font-size: 20px;
   color: #d3d3d3;
 }
@@ -62,6 +62,21 @@ code {
 
 pre code{
     display: block;
+    background-color: #262626;
+    color: #d3d3d3;
+}
+
+p, dl, li {
+    padding-left: 20px;
+}
+
+dt{
+    padding: 0px 0px;
+    color: #9c9a15;
+}
+
+dd{
+    padding: 10px 100px;
 }
 
 
