@@ -80,17 +80,15 @@ dd{
     padding: 10px 100px;
 }
 
+@media screen and (max-height: 450px) {
+    #navbar header {
+        display: none;
+    }
 
-
-
-
-
-
-/* @media screen and (max-height: 450px) {
-  .sidenav {
+  .nav-bar {
     padding-top: 15px;
   }
   .sidenav a {
     font-size: 18px;
   }
-} */
+}
