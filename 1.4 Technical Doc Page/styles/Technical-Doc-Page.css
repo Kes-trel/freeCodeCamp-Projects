@@ -54,7 +54,7 @@ header {
     padding: 20px 20px;
 }
 
-li {
+li, .sub-section header{
     list-style: none;
     font-size: 25px;
     font-weight: bold;
