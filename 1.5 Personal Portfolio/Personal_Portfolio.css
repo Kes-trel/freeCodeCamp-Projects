@@ -90,23 +90,8 @@ a:hover {
     align-items: center;
 }
 
-#welcome-section::after,
-#projects::after,
-#contact::after {
-    content: "";
-    -webkit-background-size: cover;
-    background-size: cover;
-    background-position: center center;
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-}
-
-#welcome-section::after {
-    background-image: url(https://images.unsplash.com/photo-1468070454955-c5b6932bd08d?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1350&q=80);
-    opacity: 0.1;
+#welcome-section {
+    background-color: yellow;
 }
 
 #projects {
@@ -117,8 +102,3 @@ a:hover {
     background-color: red;
 }
 
-#welcome-section > *,
-#projects > *,
-#contact > * {
-    z-index: 1;
-}
