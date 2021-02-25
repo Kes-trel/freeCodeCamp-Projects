@@ -29,7 +29,7 @@ body {
     left: 0;
     z-index: 11;
     text-align: center;
-    background-color: aqua;
+    background-color: inherit;
 }
 
 a:link,
@@ -39,7 +39,7 @@ a:active {
 }
 
 a:hover {
-    color: white;
+    color: rgba(255, 255, 0, 0.164);
     background-color: #4c4c4c50;
     -webkit-transition: 0.5s;
     -o-transition: 0.5s;
@@ -70,7 +70,6 @@ a:hover {
         display: none;
     }
 }
-
 
 @media (max-width: 641px) {
     .nav-bar-text {
